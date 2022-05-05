@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../vue-boolzapp/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app" class="wrapper">
+    <div class="green-top"></div>
+
+    <div class="test">
+
+      <div class="sx">
+
+        <div class="sx-header"></div>
+
+        <div class="notification-sx"></div>
+        <div class="srcbar"><input type="text" placeholder="Cerca Contatto!" name="" id="searchbar">
+        </div>
+
+        <!-- adesso creo scheletro div da ripetere con v for -->
+        <div class="contact">
+          <div v-for="user in users" class="single-contact">
+            <div class="profimg">{{user.avatar}}</div>
+            <span>{{user.name}} <br>
+              prova
+            </span> <br>
+            <span></span>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- colonna sinistra base -->
+
+      <div class="dx"></div>
+    </div>
+
+    <div class="bg-bottom"></div>
+
+
+
+  </div>
+  
+
+  
+  <script src="../vue-boolzapp/contacts-boolzapp.js"></script>
+</body>
+</html>

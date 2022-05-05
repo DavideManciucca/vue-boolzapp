@@ -1,0 +1,72 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper{
+  position: relative;
+}
+.green-top{
+  background-color: #226c62;
+  height: 80px;
+  /* position: relative */
+}
+/* d8dbd5 */
+.bg-bottom{
+  /* position: relative; */
+  background-color:#d8dbd5 ;
+  height: calc(100vh - 80px);
+}
+.test{
+  height: 95vh;
+  width: 80%;
+  position: absolute;
+  left: 125px;
+  top: 20px;
+  background-color: white;
+}
+/* colonna sinistra interna */
+.sx{
+  background-color: red;
+  height: 100%;
+  width: calc(100% / 3);
+
+}
+.sx-header{
+  background-color: green;
+  height: 45px;
+}
+.notification-sx{
+  background-color: blue;
+  height: 55px;
+}
+.srcbar{
+  text-align: center;
+}
+#searchbar{
+  width: 98%;
+  border-radius: 5px;
+  padding: 5px;
+}
+/* adesso css del div che verrà ciclato */
+.contact{
+  margin-top: 7px;
+  background-color: green;
+  height: 200px;
+  border: 1px solid gray;
+  width: 98%;
+}
+.single-contact:hover{
+  background-color: #d8dbd5;
+}
+.single-contact{
+  display: flex;
+  background-color: tomato;
+  padding-bottom: 10px;
+  /* height: 75px; */
+}
+.profimg{
+  /* font-size: 10px; */
+ height: 10px;
+ /* width: 10px; */
+}
