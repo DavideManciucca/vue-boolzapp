@@ -1,6 +1,10 @@
 const app = new Vue({
     el:'#app',
     data:{
+        utente:{
+            name : 'Davide Manciucca',
+            avatar :'mine'
+        },
         users:[
             {
                 name: 'Michele',

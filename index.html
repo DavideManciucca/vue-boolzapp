@@ -5,46 +5,56 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../vue-boolzapp/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <title>Document</title>
 </head>
 <body>
   <div id="app" class="wrapper">
-    <div class="green-top"></div>
+    
+    
 
-    <div class="test">
-
-      <div class="sx">
-
-        <div class="sx-header"></div>
-
-        <div class="notification-sx"></div>
-        <div class="srcbar"><input type="text" placeholder="Cerca Contatto!" name="" id="searchbar">
-        </div>
-
-        <!-- adesso creo scheletro div da ripetere con v for -->
-        <div class="contact">
-          <div v-for="user in users" class="single-contact">
-            <div class="profimg">{{user.avatar}}</div>
-            <span>{{user.name}} <br>
-              prova
-            </span> <br>
-            <span></span>
-
+      <div class="main-container">
+        <div class="sx-col">
+          <div class="sx-header">
+            <div><img :src="`img/avatar${utente.avatar}.jpg`" alt=""></div>
+            <div>{{utente.name}}</div>
+            <div><span><i class="fa-solid fa-rotate"></i></span>
+    
+              <span><i class="fa-solid fa-message"></i></span>
+              
+              <span><i class="fa-solid fa-ellipsis"></i></span></div>
           </div>
+          
+          
+          <!-- colsx -->
+        <div class="notification">
+          <div class="bell"><i class="fa-solid fa-bell"></i></div>
+          <div>
+       <span class="span1">Ricevi notifiche di nuovi messaggi</span>  <br>
+        <span class="span2">Attiva notifiche desktop</span></div>
         </div>
+        <div class="search-section"> 
+          <div class="leans-search"> <i class="fa-solid fa-magnifying-glass"></i></div>
+          <input class="search-bar" type="text" placeholder="cerca contatto">
+        </div>
+    
+        <!-- contatti -->
+        <div class="contact-section">
+        <div v-for="(user,index) in users" class="single-contact">
+          <div class="single-contact2"><img :src="`img/avatar${user.avatar}.jpg`" alt="user.name" class="img-user">
+          <div>{{user.name}} 
+            <br> {{user.name}}
+          </div></div>
+          <div class="test">test</div>
+        </div></div>
+    
+        </div>
+        
+        <!-- fine colonna sinistra -->
+
 
       </div>
-
-      <!-- colonna sinistra base -->
-
-      <div class="dx"></div>
-    </div>
-
-    <div class="bg-bottom"></div>
-
-
-
   </div>
   
 
