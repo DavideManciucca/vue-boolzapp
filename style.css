@@ -98,6 +98,10 @@ body{
   padding: 10px;
   /* background-color: aliceblue; */
 }
+.test{
+  
+  font-size: 5px;
+}
 .single-contact-deep{
   display: flex;
   
@@ -173,7 +177,7 @@ body{
   height: 50px;
   width: 100%;
   background-color: #e2e2e2;
-  
+
 }
 
 #input{
@@ -185,4 +189,7 @@ body{
 .message-data{
   float: right;
   font-size: 10px;
+}
+i{
+  cursor: pointer;
 }

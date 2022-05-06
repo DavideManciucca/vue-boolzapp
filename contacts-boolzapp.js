@@ -1,6 +1,7 @@
 const app = new Vue({
     el:'#app',
     data:{
+
         utente:{
             name : 'Davide Manciucca',
             avatar :'mine'
@@ -167,7 +168,27 @@ const app = new Vue({
                     }
                 ],
             }
-        ]
+        ],
+    indexUser :0,
+    findChat:'',
+    msgToSend:'',
+    
+    },
+    methods:{
+        userChat(index){
+            this.indexUser=index;
+
+        },
+        sendMsgAction(){
+            if(this.msgToSend > 0){
+                this.users[thisindexUser].messages.push({
+                    date:'prova',
+                    message:this.msgToSend,
+                    status:'sent',
+                });
+                this.msgToSend='';
+            }
+        }
     }
 })
 

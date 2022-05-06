@@ -41,12 +41,12 @@
     
         <!-- contatti -->
         <div class="contact-section">
-        <div v-for="(user,index) in users" class="single-contact">
+        <div v-for="(user,index) in users" class="single-contact" @click="userChat(index)">
           <div class="single-contact-deep"><img :src="`img/avatar${user.avatar}.jpg`" alt="user.name" class="img-user">
           <div>{{user.name}} 
-            <br> {{user.name}}
+           <br> <span v-for="(text, index) in user.messages" >{{text.message}}</span> 
           </div></div>
-          <div class="test">test</div>
+          <div class="test" v-for="(text, index) in user.messages" >{{text.date}}</div>
         </div></div>
     
         </div>
@@ -56,26 +56,26 @@
         <div class="dx-col">
           <div class="dx-header">
             <div class="dx-header-deep"><img class="dx-img" src="img/avatar_1.jpg" alt="">
-              <div>michele <br>
-              test</div>
+              <div> {{users[indexUser].name}} <br>
+             <span>Ultimo accesso oggi alle</span> </div>
             </div>
             <div class="icon-top-dx"><span><i class="fa-solid fa-magnifying-glass"></i></span> <span><i class="fa-solid fa-paperclip"></i></span> <span><i class="fa-solid fa-ellipsis"></i></span> </div>
           </div>
           <div class="container-chat">
-            <div class="chat">
-              <div class="messaggio-sinistra">
+            <div class="chat" >
+              <div class="messaggio-sinistra" v-for="(message, index) in users[indexUser].messages">
 
-                <div class="right-message">
-                  <div class="message sent">
-                    <div class="message-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam reprehenderit dolorum ab placeat esse voluptatum repellendus consequuntur unde, commodi officia pariatur delectus et quae quam ullam fugiat! Mollitia, consequuntur maiores.</div>
-                    <div class="message-data">test</div>
+                <div class="right-message sent">
+                  <div class="message sent ">
+                    <div class="message-text">{{message.message}}</div>
+                    <div class="message-data"></div>
                   </div>
                 </div>
 
                 <!-- messaggi -->
-                <div class="left-message">
-                <div class="message recived">
-                  <div class="message-text">lorem1000</div>
+                <div class="left-message recived">
+                <div class="message recived ">
+                  <div class="message-text" >{{message.message}}</div>
                   <div class="message-data">test</div>
                 </div></div>
             </div>
@@ -83,7 +83,7 @@
           </div>
           <div class="input-chat">
             <div><i class="fa-solid fa-face-grin"></i></div>
-            <div class=""> <input type="text" name="" id="input"></div>
+            <div class=""> <input v-model="msgToSend" type="text" name="" id="input" @keyup.enter="sendMsgAction()"></div>
             <div><i class="fa-solid fa-microphone"></i></div>
             
           </div>
