@@ -167,9 +167,19 @@ body{
   flex-direction: row-reverse;
 }
 .input-chat{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   height: 50px;
   width: 100%;
-  background-color: cadetblue;
+  background-color: #e2e2e2;
+}
+
+#input{
+  width: 500px;
+  height: 35px;
+  border: 3px solid #8edafc;
+  border-radius: 5px;
 }
 .message-data{
   float: right;
