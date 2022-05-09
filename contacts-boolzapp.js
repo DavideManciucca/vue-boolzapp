@@ -170,26 +170,61 @@ const app = new Vue({
             }
         ],
     indexUser :0,
-    findChat:'',
-    msgToSend:'',
+    // findChat:'',
+    newText:''
     
     },
     methods:{
+        // getMessage(index){
+        //     const user = this.users[index];
+        //     const messages = user.messages;
+        //     const lastMsg = messages[messages.length - 1];
+        //     return lastMsg.message;
+        // },
         userChat(index){
             this.indexUser=index;
 
         },
-        sendMsgAction(){
-            if(this.msgToSend > 0){
-                this.users[thisindexUser].messages.push({
-                    date:'prova',
-                    message:this.msgToSend,
-                    status:'sent',
-                });
-                this.msgToSend='';
+        // sendMsgAction(){
+        //     if(this.msgToSend > 0){
+        //         this.users[thisindexUser].messages.push({
+        //             date:'prova',
+        //             message:this.msgToSend,
+        //             status:'sent',
+        //         });
+        //         console.log(this.sendMsgAction);
+        //         this.msgToSend='';
+        //     }
+        // }
+        sendInput(message, target){
+            //SIMULIAMO LA REALTA' DOVE IL NOSTRO MESSAGGIO VERRA' SPEDITO A UN SERVIZIO ESTERNO
+            
+            setTimeout(()=>{
+                
+                    target.messages.push(message);
+                
+                
+            },1000);
+        },
+
+        newInput(){
+
+            const userMess = this.users[this.indexUser];
+            const newInput ={
+                date:'modificare data ',
+                message:this.newText,
+                status:'sent'
             }
-        }
+
+            this.sendInput(newInput, userMess);
+            this.newText=''
+           
+        },
+
+
     }
+
+
 })
 
 

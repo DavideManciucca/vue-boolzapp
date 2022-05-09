@@ -87,6 +87,17 @@ body{
   height: calc(100% - 60px - 55px - 44px);
   overflow-y: scroll;
 }
+.small-box{
+  /* width: 40px; */
+  text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+
 .single-contact:hover{
   background-color: rgb(238, 233, 233);
 }
@@ -147,13 +158,45 @@ body{
   height: calc(100% - 55px - 50px );
   /* background-color: yellow; */
   width: 100%;
+  
 }
 .chat{
   height: calc(100% - 50px - 50px);
   overflow-y: scroll;
   padding: 50px;
 }
-.message{
+/* .chat .mess::after{
+  clear: both;
+  display: table;
+  content: '';
+} */
+
+.chat .mess{
+  position: relative;
+  
+  background-color: white;
+  min-width: 40%; 
+  max-width: 60%; 
+  border-radius: 10px;
+  padding: 20px;
+  clear: both;
+}
+.chat .mess.sent{
+  float: right;
+  background-color:#d5f9ba;
+}
+.chat .mess.received{
+  float: left;
+  background-color: white;
+}
+.chat .mess .mess-time{
+  position: absolute;
+  right: 10px;
+  color: #b6bbbc;
+  font-size: 8px;
+}
+
+/* .message{
   background-color: #D5F9BA;
   border-radius: 10px;
   padding: 10px;
@@ -169,7 +212,7 @@ body{
 .right-message{
   display: flex;
   flex-direction: row-reverse;
-}
+} */
 .input-chat{
   display: flex;
   justify-content: space-around;
