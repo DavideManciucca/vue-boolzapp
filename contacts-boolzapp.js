@@ -170,7 +170,7 @@ const app = new Vue({
             }
         ],
     indexUser :0,
-    // findChat:'',
+    findChat:'',
     newText:''
     
     },
@@ -181,10 +181,14 @@ const app = new Vue({
         //     const lastMsg = messages[messages.length - 1];
         //     return lastMsg.message;
         // },
+       
+        
         userChat(index){
             this.indexUser=index;
 
         },
+
+        
         // sendMsgAction(){
         //     if(this.msgToSend > 0){
         //         this.users[thisindexUser].messages.push({
@@ -196,32 +200,67 @@ const app = new Vue({
         //         this.msgToSend='';
         //     }
         // }
-        sendInput(message, target){
-            //SIMULIAMO LA REALTA' DOVE IL NOSTRO MESSAGGIO VERRA' SPEDITO A UN SERVIZIO ESTERNO
-            
-            setTimeout(()=>{
-                
-                    target.messages.push(message);
-                
-                
-            },1000);
-        },
+        // sendInput(message,target){
+        //     //SIMULIAMO LA REALTA' DOVE IL NOSTRO //MESSAGGIO VERRA' SPEDITO A UN SERVIZIO ESTERNO
+        //     setTimeout(()=>{
+        //         target.messages.push(message);
+        //     },1000);
 
-        newInput(){
+        // },
 
-            const userMess = this.users[this.indexUser];
-            const newInput ={
-                date:'modificare data ',
-                message:this.newText,
-                status:'sent'
-            }
+        // newInput(){
 
-            this.sendInput(newInput, userMess);
-            this.newText=''
+        //     const userMess = this.users[this.indexUser];
+        //     const newInput ={
+        //         date:'modificare data ',
+        //         message:this.newText,
+        //         status:'sent'
+        //     }
+
+        //     this.sendInput(newInput, userMess);
+        //     this.newText=''
+        //     setTimeout(()=>{
+        //         this.randomAnswer(newInput)
+        //     },0500);
            
+        // },
+        // randomAnswer(newInput){
+        //     const answer = {
+        //         date:'test',
+        //         message:'Questa è una risposta! Provare con array di risposte casuali',
+        //         status:'received'
+        //     }
+        //     this.sendInput(newInput, answer );
+        // },
+
+        sendInput(message,target){
+            setTimeout(()=>{
+                target.messages.push(message);
+            },500);
         },
+        newInput(){
+            const contact = this.users[this.indexUser];
+            const nuovoMessaggio={
+                date:'prova data',
+                message: this.newText,
+                status: 'sent',
+            }
+            this.sendInput(nuovoMessaggio, contact);
+            this.newText='',
+            setTimeout(()=>{
+                this.randomAnswer(contact);
+            },0500);
 
+        },
+        randomAnswer(contact){
+            const message= {
+                date:'prova data',
+                message:'okok',
+                status:'received',
 
+            }
+            this.sendInput(contact, message);
+        }
     }
 
 

@@ -36,12 +36,13 @@
         </div>
         <div class="search-section"> 
           <div class="leans-search"> <i class="fa-solid fa-magnifying-glass"></i></div>
-          <input class="search-bar" type="text" placeholder="cerca contatto">
+          <input v-model.trim="findChat"  
+          class="search-bar" type="text" placeholder="cerca contatto">
         </div>
     
         <!-- contatti -->
         <div class="contact-section">
-        <div v-for="(user,index) in users" class="single-contact" @click="userChat(index)">
+        <div v-for="(user,index) in users" class="single-contact" @click="userChat(index)" :class="user.visible">
           <div class="single-contact-deep"><img :src="`img/avatar${user.avatar}.jpg`" alt="user.name" class="img-user">
           <div>{{user.name}} 
            <br> <div class="small-box"><small><span v-for="(text, index) in user.messages" >{{user.messages[user.messages.length - 1].message}}</span> </small></div>
